@@ -205,7 +205,7 @@ public class AppDriver {
                 return new BaseAreaComparator();
             case "h":
             default:
-                return null; // Use natural ordering (Comparable)
+                return null; // Use natural Comparable
         }
     }
 
