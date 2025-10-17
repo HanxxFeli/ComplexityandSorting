@@ -9,10 +9,10 @@ public class InsertionSort {
 	 * Insertion sort using Comparable (by height)
 	 * Sort in Descending order
      */
-    public static void sort(Shape[] arr) {
+	public static <T extends Comparable<? super T>> void sort(T[] arr) {
         int n = arr.length;
         for (int i = 1; i < n; i++) {
-            Shape key = arr[i];
+            T key = arr[i];
             int j = i - 1;
 
             // Move elements greater than key to the right (descending order)
@@ -28,10 +28,10 @@ public class InsertionSort {
 	 * Insertion sort using comparator (base area or volume)
 	 * Sort in descending order
      */
-    public static void sort(Shape[] arr, Comparator<Shape> comparator) {
+	public static <T> void sort(T[] arr, Comparator<? super T> comparator) {
         int n = arr.length;
         for (int i = 1; i < n; i++) {
-            Shape key = arr[i];
+            T key = arr[i];
             int j = i - 1;
 
             // Move elements greater than key to the right (descending order)

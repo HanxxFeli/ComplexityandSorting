@@ -9,7 +9,7 @@ public class MergeSort {
 	 * Sort the array by height in descending order
 	 * @param arr array of Shape objects
 	 */
-    public static void sort(Shape[] arr) {
+	public static <T extends Comparable<? super T>> void sort(T[] arr) {
         if (arr == null || arr.length <= 1) return;
         mergeSort(arr, 0, arr.length - 1);
     } // sort comparable
@@ -21,7 +21,7 @@ public class MergeSort {
      * @param l   left index
      * @param r   right index
      */
-    private static void mergeSort(Shape[] arr, int l, int r) {
+	private static <T extends Comparable<? super T>> void mergeSort(T[] arr, int l, int r) {
         if (l < r) {
             int m = l + (r - l) / 2; // get middle index
             mergeSort(arr, l, m); 
@@ -38,13 +38,13 @@ public class MergeSort {
      * @param m   middle index
      * @param r   right index
      */
-    private static void merge(Shape[] arr, int l, int m, int r) {
+	private static <T extends Comparable<? super T>> void merge(T[] arr, int l, int m, int r) {
         int n1 = m - l + 1; // left subarray
         int n2 = r - m; // right subarray
 
         // temporary
-        Shape[] L = new Shape[n1];
-        Shape[] R = new Shape[n2];
+        T[] L = java.util.Arrays.copyOfRange(arr, l, m + 1);
+        T[] R = java.util.Arrays.copyOfRange(arr, m + 1, r + 1);
 
         for (int i = 0; i < n1; i++) L[i] = arr[l + i];
         for (int j = 0; j < n2; j++) R[j] = arr[m + 1 + j];
@@ -71,7 +71,7 @@ public class MergeSort {
      * @param arr array of Shape objects
      * @param comp Comparator to determine order
      */
-    public static void sort(Shape[] arr, Comparator<Shape> comp) {
+	public static <T> void sort(T[] arr, Comparator<? super T> comp) {
         if (arr == null || arr.length <= 1) return; // Already sorted
         mergeSort(arr, 0, arr.length - 1, comp);
     }
@@ -84,7 +84,7 @@ public class MergeSort {
      * @param r   right index
      * @param comp Comparator to determine order
      */
-    private static void mergeSort(Shape[] arr, int l, int r, Comparator<Shape> comp) {
+	private static <T> void mergeSort(T[] arr, int l, int r, Comparator<? super T> comp) {
         if (l < r) {
             int m = l + (r - l) / 2;
 
@@ -104,12 +104,12 @@ public class MergeSort {
      * @param r   right index
      * @param comp Comparator to determine order
      */
-    private static void merge(Shape[] arr, int l, int m, int r, Comparator<Shape> comp) {
+	private static <T> void merge(T[] arr, int l, int m, int r, Comparator<? super T> comp) {
         int n1 = m - l + 1;
         int n2 = r - m;
 
-        Shape[] L = new Shape[n1];
-        Shape[] R = new Shape[n2];
+        T[] L = java.util.Arrays.copyOfRange(arr, l, m + 1);
+        T[] R = java.util.Arrays.copyOfRange(arr, m + 1, r + 1);
 
         // Copy data to temporary arrays
         for (int i = 0; i < n1; i++) L[i] = arr[l + i];
