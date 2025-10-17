@@ -3,10 +3,8 @@ package appDomain;
 import java.io.*;
 import java.util.*;
 import utilities.*;
-import shapes.Shape; // base shape
-import sort.BubbleSort;
-import sort.InsertionSort;
-import sort.MergeSort;
+import shapes.*; // base shape
+import sort.*;
 import comparator.VolumeComparator; // volume comparator
 import comparator.BaseAreaComparator; // base area comparator
 
