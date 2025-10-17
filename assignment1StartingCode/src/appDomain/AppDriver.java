@@ -3,6 +3,10 @@ package appDomain;
 import java.io.*;
 import java.util.*;
 import utilities.*;
+import shapes.*; // base shape
+import sort.*;
+import comparator.VolumeComparator; // volume comparator
+import comparator.BaseAreaComparator; // base area comparator
 
 /**
  * Application driver for sorting geometric shapes.
