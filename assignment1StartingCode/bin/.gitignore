@@ -1,4 +1,10 @@
+/sort/
 /appDomain/
 /shapes/
+<<<<<<< HEAD
 /utilities/
 /sort/
+=======
+/comparators/
+/comparator/
+>>>>>>> refs/remotes/origin/main
