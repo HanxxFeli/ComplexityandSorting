@@ -2,7 +2,6 @@ package appDomain;
 
 import java.io.*;
 import java.util.*;
-import utilities.*;
 import shapes.*; // base shape
 import sort.*;
 import comparator.VolumeComparator; // volume comparator
@@ -24,7 +23,7 @@ public class AppDriver {
      *   -f<filename> : input file path (required)
      *   -t<v|h|a> : compare type (v=volume, h=height, a=base area)
      *   -s<b|s|i|m|q|z> : sorting algorithm
-     *      b=bubble(Xander), s=selection(Yvana), i=insertion(Hans),
+     *      b=bubble(Hans), s=selection(Yvana), i=insertion(Hans),
      *      m=merge(Hans), q=quick(Yvana), z=custom(Celine)
      */
     public static void main(String[] args) {
@@ -235,10 +234,10 @@ public class AppDriver {
         double value;
         switch (compareType) {
             case "v":
-                value = shape.getVolume();
+                value = shape.calcVolume();
                 break;
             case "a":
-                value = shape.getBaseArea();
+                value = shape.calcBaseArea();
                 break;
             case "h":
             default:
